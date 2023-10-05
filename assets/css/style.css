@@ -1343,6 +1343,8 @@ input:checked + .radio__inner:hover .radio__marker {
   }
   .quiz__question {
     padding: 48px 32px 32px;
+    position: relative;
+    content: "";
   }
   .quiz__question h3 {
     margin-bottom: 24px;
@@ -1352,6 +1354,27 @@ input:checked + .radio__inner:hover .radio__marker {
   }
   .quiz__question-controls {
     margin-bottom: 64px;
+  }
+  .quiz__question::before, .quiz__question::after {
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 32px 32px 0 0;
+    display: block;
+    content: "";
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  .quiz__question::before {
+    width: 80%;
+    top: -16px;
+    background-color: var(--purple-200);
+  }
+  .quiz__question::after {
+    width: 90%;
+    bottom: 100%;
+    top: -8px;
+    background-color: var(--purple-300);
   }
 }
 @media (min-width: 1440px) {
@@ -1363,7 +1386,6 @@ input:checked + .radio__inner:hover .radio__marker {
   }
   .quiz__question {
     border-radius: 32px;
-    overflow: hidden;
   }
 }
 .modal {
