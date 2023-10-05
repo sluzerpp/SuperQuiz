@@ -10,11 +10,16 @@
   font-weight: 500;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--purple-100);
 
   .section {
     margin-bottom: 48px;
+    position: relative;
   
     &_first{
       margin-top: 55px;

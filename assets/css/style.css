@@ -34,11 +34,16 @@
   font-weight: 500;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--purple-100);
 }
 body .section {
   margin-bottom: 48px;
+  position: relative;
 }
 body .section_first {
   margin-top: 55px;
