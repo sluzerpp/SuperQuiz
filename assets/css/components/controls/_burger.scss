@@ -1,0 +1,23 @@
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  border-radius: 24px;
+  padding: 5px 8px;
+  cursor: pointer;
+  user-select: none;
+  width: max-content;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+
+@media (min-width: 1100px) {
+  .burger {
+    display: none;
+  }
+}

@@ -1,0 +1,48 @@
+.btn-close {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--black);
+  outline: transparent;
+  border-radius: 16px;
+  transition-property: background-color, border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+  position: relative;
+  cursor: pointer;
+
+  &::after, &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background-color: var(--black);
+    left: 50%;
+    top: 50%;
+    transition: background-color 0.15s ease;
+  }
+
+  &::after {
+    transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  }
+
+  &::before {
+    transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  }
+
+  &:hover {
+    background-color: var(--purple-400);
+    border-color: var(--purple-400);
+
+    &::after, &::before {
+      background-color: var(--white);
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .btn-close {
+    width: 56px;
+    height: 56px;
+  }
+}

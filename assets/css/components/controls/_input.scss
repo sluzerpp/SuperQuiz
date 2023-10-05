@@ -1,0 +1,129 @@
+.input {
+  padding: 8px 0;
+  position: relative;
+  border-bottom: 2px solid var(--black);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  transition-property: color, border-color;
+  transition-duration: 0.15s; 
+  transition-timing-function: ease;
+
+  &_width-700 {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  input {
+    font-size: 24px;
+    outline: transparent;
+    font-weight: 500;
+    width: 100%;
+    color: var(--black);
+    transition: color 0.15s ease;
+
+    &::placeholder {
+      font-size: 1em;
+      opacity: 0.3;
+      color: var(--black);
+    }
+  }
+
+  &__additional {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__warning {
+    position: relative;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    display: none;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-text {
+      position: absolute; 
+      text-wrap: nowrap;
+      background-color: var(--red);
+      color: var(--white);
+      font-size: 16px;
+      padding: 0.6em;
+      right: 0;
+      border-radius: 0.4em;
+      top: calc(100% + 1.25em);
+      transform-origin: calc(100% - 16px) top;
+      scale: 0;
+      transition: scale 0.15s ease;
+
+      &::before {
+        position: absolute;
+        right: 16px;
+        top: -4.5px;
+        content: '';
+        display: block;
+        background-color: var(--red);
+        width: 9px;
+        height: 9px;
+        transform: translateX(50%) rotate(45deg);
+      }
+    }
+
+    &:hover {
+      .input__warning-text {
+        scale: 1;
+      }
+    }
+  }
+
+  &_red-warning {
+    color: var(--red);
+    border-color: var(--red);
+
+    & input {
+      color: var(--red);
+
+      &::placeholder {
+        color: var(--red);
+      }
+    }
+
+    .input__warning {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .input {
+    input {
+      font-size: 32px;
+
+      &::placeholder {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .input_red-warning {
+    .input__warning {
+      width: 36px;
+      height: 36px;
+
+      &-text {
+        transform-origin: calc(100% - 18px) top;
+
+        &::before {
+          right: 18px;
+        }
+      }
+    }
+  }
+}

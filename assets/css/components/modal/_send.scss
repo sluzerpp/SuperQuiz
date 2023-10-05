@@ -1,0 +1,17 @@
+.send-modal {
+  & h3 {
+    margin-bottom: 16px;
+  }
+
+  & p {
+    margin-bottom: 64px;
+  }
+}
+
+@media (min-width: 700px) {
+  .send-modal {
+    & h3 {
+      margin-bottom: 24px;
+    }
+  }
+}

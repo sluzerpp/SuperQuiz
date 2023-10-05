@@ -1,0 +1,116 @@
+.checkbox { 
+  display: block;
+  width: max-content;
+
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__inner {
+    width: max-content;
+    font-size: 16px;
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    display: flex;
+    padding: 8px 1.5em;
+    cursor: pointer;
+    align-items: center;
+    transition-property: color, border-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+
+    &:hover {
+      background-color: var(--purple-400);
+      border-color: var(--purple-400);
+      color: var(--white);
+    }
+  }
+
+  &__marker {
+    display: block;
+    width: 18px;
+    height: 18px;
+    max-width: 0;
+    max-height: 0;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: relative;
+    transition-property: margin, max-width, max-height;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+
+    &::after, &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--black);
+      left: 50%;
+      top: 50%;
+      transition: background-color 0.15s ease;
+    }
+  
+    &::after {
+      transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+    }
+  
+    &::before {
+      transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+    }
+  }
+
+  input:checked + &__inner {
+    background-color: var(--black);
+    color: var(--white);
+
+    .checkbox__marker {
+      max-width: 18px;
+      max-height: 18px;
+      margin-right: 8px;
+    }
+
+    &:hover {
+      border-color: var(--black);
+
+      .checkbox__marker {
+        background-color: var(--purple-400);
+
+        &::after, &::before {
+          background-color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .checkbox {
+    &__inner {
+      font-size: 24px;
+    }
+
+    &__marker {
+      width: 22px;
+      height: 22px;
+
+      &::after, &::before {
+        width: 70%;
+      }
+    }
+
+    input:checked + &__inner {
+      .checkbox__marker {
+        max-width: 22px;
+        max-height: 22px;
+      }
+    }
+  }
+}

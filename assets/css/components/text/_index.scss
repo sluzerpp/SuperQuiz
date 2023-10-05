@@ -1,0 +1,49 @@
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--raleway);
+  line-height: 1.15;
+
+  &_bold {
+    font-weight: 700;
+  }
+}
+
+.title {
+  font-family: var(--neuemachina);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 0.9;
+
+  &_emoji {
+    font-size: 96px;
+  }
+}
+
+@media (min-width: 700px) {
+  .text {
+    font-size: 20px;
+    font-weight: 500;
+
+    &_bold {
+      font-weight: 700;
+    }
+
+    &_small {
+      font-size: 16px;
+    }
+  }
+
+  .title {
+    font-size: 72px;
+    font-weight: 700;
+
+    &_large {
+      font-size: 96px;
+    }
+
+    &_emoji {
+      font-size: 128px;
+    }
+  }
+}

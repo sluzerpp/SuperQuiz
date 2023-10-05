@@ -1,0 +1,70 @@
+.btn-file {
+  background-color: var(--black);
+  border-radius: 8px;
+  font-size: 0;
+  max-height: 32px;
+  padding: 4px;
+  display: grid;
+  font-family: var(--raleway);
+  font-weight: 500;
+  color: var(--white);
+  width: auto;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  
+  &:hover {
+    background-color: var(--purple-400);
+  }
+
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__text {
+    display: block;
+    font-size: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &_with-text {
+    .btn-file__text {
+      font-size: 20px;
+    }
+    gap: 10px;
+  }
+}
+
+@media (min-width: 700px) {
+  .btn-file {
+    max-height: 36px;
+    padding: 6px 8px;
+    font-size: 20px;
+    gap: 10px;
+    width: max-content;
+    max-width: 216px;
+
+    &__text {
+      font-size: 20px;
+    }
+
+    label {
+      gap: 10px;
+    }
+  }
+}

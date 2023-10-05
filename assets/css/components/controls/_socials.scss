@@ -1,0 +1,26 @@
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: max-content;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.contact-modal {
+  & h3 {
+    margin-bottom: 64px;
+  }
+
+  & p {
+    margin-bottom: 24px;
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 64px;
+    gap: 24px;
+  }
+
+  &__radios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 64px;
+  }
+}
+
+@media (min-width: 700px) {
+  .contact-modal {
+    & h3 {
+      margin-bottom: 64px;
+    }
+  
+    & p {
+      margin-bottom: 24px;
+    }
+  
+    &__inputs {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 64px;
+
+      & .input:last-child {
+        grid-column: 1/3;
+      }
+    }
+  
+    &__radios {
+      margin-bottom: 64px;
+    }
+  }
+}
