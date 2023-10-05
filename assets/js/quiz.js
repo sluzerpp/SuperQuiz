@@ -139,7 +139,7 @@ class Quiz {
     const btn = document.createElement('div');
     btn.className = 
       'quiz__questions-item quiz__questions-item_without-text' + (isSelected ? ' quiz__questions-item_current' : '');
-    const btnTitle = document.createElement('h4');
+    const btnTitle = document.createElement('p');
     btnTitle.className = 'text text_bold text_small';
     btnTitle.textContent = question.title;
     const btnText = document.createElement('p');
